@@ -1,7 +1,7 @@
 'use strict';
 
 // todo: the namespace should be in a config file
-const datastore = require('@google-cloud/datastore')({ namespace: 'jacek' });
+const datastore = require('@google-cloud/datastore')({ namespace: 'ryan-lc-db' });
 
 function key(id) {
   return datastore.key(['strings', id]);
