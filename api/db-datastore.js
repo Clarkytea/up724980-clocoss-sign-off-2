@@ -16,7 +16,7 @@ module.exports.list = async () => {
 module.exports.get = async (id) => {
   const [data] = await datastore.get(key(id));
   if (data && data.val) return data.val;
-  return '';
+  return '0';
 };
 
 //Creating a new entry with an assigned ID and Value
