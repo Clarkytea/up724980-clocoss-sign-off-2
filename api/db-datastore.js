@@ -19,6 +19,24 @@ module.exports.get = async (id) => {
   return '';
 };
 
+//Creating a new entry with an assigned ID and Value
 module.exports.put = (id, val) => {
   return datastore.save({ key: key(id), data: { name: id, val } });
+};
+
+//Posting an entry that will add a value to the existing value
+module.exports.post = (id, val) => {
+  const [data] = await datastore.get(key(id));
+  if (data && data.val) {
+    data.val + val;
+  }
+  return datastore.save({ key: key(id), data: { name: id, val } });
+};
+
+//Delete an entry from the database based on the ID
+module.exports.delete = (id) => {
+  const [data] = await datastore.get(key(id));
+  if (data && data.val) {
+    data.delete(key(id));
+  }
 };
