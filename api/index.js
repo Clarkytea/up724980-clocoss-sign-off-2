@@ -37,5 +37,24 @@ api.put('/:id(\\w+)', bodyParser.text(), async (req, res) => {
   }
 });
 
+api.post('/:id(\\w)', bodyParser.text(), async (req, res) => {
+  try {
+    await db.put(req.params.id, req.body);
+    res.sendStatus(204);
+  } catch (e) {
+    console.error(e);
+    res.sendStatus(500);
+  }
+});
+
+api.delete('/:id(\\w)', async (req, res) => {
+  try {
+    await db.delete(req.params.id);
+    res.sendStatus(204);
+  } catch (e) {
+    console.error(e);
+    res.sendStatus(500);
+  }
+});
 
 module.exports = api;
