@@ -49,8 +49,8 @@ api.post('/:id(\\w+)', bodyParser.text(), async (req, res) => {
 
 api.delete('/:id(\\w+)', async (req, res) => {
   try {
-    res.send(await db.delete(req.params.id));
-    res.sendStatus(204);
+    res.send(await db.delete(req.params.id), 204);
+    //res.sendStatus(204);
   } catch (e) {
     console.error(e);
     res.sendStatus(500);
