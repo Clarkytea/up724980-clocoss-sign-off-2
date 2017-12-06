@@ -28,9 +28,15 @@ module.exports.put = async (id, val) => {
 module.exports.post = async (id, val) => {
   const [data] = await datastore.get(key(id));
   if (data && data.val) {
-    data.val + val;
+    try {
+    val = parseInt(data.val) + parseInt(val);
+    } catch(e) {
+      console.log('ERROR: Int not Parsed');
+    }
   }
-  return datastore.save({ key: key(id), data: { name: id, val } });
+  const [savedData] = datastore.save({ key: key(id), data: { name: id, val } });
+  console.log(savedData);
+  return val;
 };
 
 //Delete an entry from the database based on the ID
