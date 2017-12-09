@@ -41,8 +41,9 @@ module.exports.post = async (id, val) => {
 
 //Delete an entry from the database based on the ID
 module.exports.delete = async (id) => {
-  const [data] = await datastore.get(key(id));
-  if (data && data.val) {
-    data.delete(key(id));
+  const [data] = await datastore.delete(key(id));
+  if (data.indexUpdates > 0) {
+    return 'ok';
   }
+  return '0';
 };
