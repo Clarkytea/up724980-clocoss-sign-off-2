@@ -41,7 +41,7 @@ module.exports.post = async (id, val) => {
         data: { name: id, val },
       }
   await datastore.save(entity);
-  return val;
+  return '{$val}';
 };
 
 //Delete an entry from the database based on the ID
