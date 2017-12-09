@@ -21,7 +21,12 @@ module.exports.get = async (id) => {
 
 //Creating a new entry with an assigned ID and Value
 module.exports.put = async (id, val) => {
-  return datastore.save({ key: key(id), data: { name: id, val } });
+  const entity = {
+    key: key(id),
+    data: { name: id, val },
+  }
+  await ds.save(entity);
+  return `${val}`;
 };
 
 //Posting an entry that will add a value to the existing value
