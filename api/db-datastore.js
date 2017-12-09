@@ -29,13 +29,18 @@ module.exports.post = async (id, val) => {
   const [data] = await datastore.get(key(id));
   if (data && data.val) {
     try {
-    val = parseInt(data.val) + parseInt(val);
+    val = parseInt(val) + parseInt(data.val);
     } catch(e) {
       console.log('ERROR: Int not Parsed');
     }
   }
-  const [savedData] = datastore.save({ key: key(id), data: { name: id, val } });
-  console.log(savedData);
+  //const [savedData] = datastore.save({ key: key(id), data: { name: id, val } });
+  //console.log(savedData);
+  const entity = {
+        key: key(id),
+        data: { name: id, val },
+      }
+  await ds.save(entity);
   return val;
 };
 
