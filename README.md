@@ -39,7 +39,3 @@ The code consists of the following components:
    1. `api/db-inmemory.js` – a simple in-memory list of files; with a configurable delay to simulate slow network
    2. `api/db-datastore.js` – the default database that uses Google Datastore
 5. `app.yaml` – the application descriptor for Google App Engine
-
-## Tutorial
-
-Please find the tutorial in [tutorial.html](https://jacek.soc.port.ac.uk/teaching/2017/clocoss/clocoss-api-nodejs-datastore/tutorial.html)
