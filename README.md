@@ -1,19 +1,21 @@
-# CLOCOSS example: API in Node.js/Express and Datastore
+# CLOCOSS Sign Off 2 - an API in Node.js/Express and Datastore
 
 This is a simple example of a read/write API with database backing, intended for use in Google App Engine.
 
 The API is implemented in Node.js and Express, the database is either in-memory (for testing and demonstration), and in Datastore.
 
+## Prerequisites
+
+- Have the most up-to-date version of Git install on your machine
+
 ## Installation
 
 1. clone the code
-2. `npm install`
+2. run the startup.sh script
+`sh startup.sh`
 3. To test that it works: `DBTYPE=inmemory npm start`
    * it will be available on port 8080
-4. To deploy in App Engine
-   1. change service name in `app.yaml`
-   2. change namespace in `api/db-datastore.js`
-   3. `gcloud app deploy`
+4. Deploy the app.
 
 ## Description
 
