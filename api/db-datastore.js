@@ -40,7 +40,7 @@ module.exports.post = async (id, val) => {
         key: key(id),
         data: { name: id, val },
       }
-  await ds.save(entity);
+  await datastore.save(entity);
   return val;
 };
 
