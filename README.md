@@ -6,8 +6,8 @@ The API is implemented in Node.js and Express, the database is either in-memory 
 
 ## Prerequisites
 
-- Have the most up-to-date version of Git installed
-- Have the most up-to-date version of Node.js installed
+- Have the most up-to-date version of [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed
+- Have the most up-to-date version of [Node.js](https://nodejs.org/en/download/package-manager/) installed
 
 ## Installation
 
