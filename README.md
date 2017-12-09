@@ -6,16 +6,16 @@ The API is implemented in Node.js and Express, the database is either in-memory 
 
 ## Prerequisites
 
-- Have the most up-to-date version of Git install on your machine
+- Have the most up-to-date version of Git installed
+- Have the most up-to-date version of Node.js installed
 
 ## Installation
 
 1. clone the code
-2. run the startup.sh script
-`sh startup.sh`
+2. run `npm install` in the up724980-clocoss-sign-off-2 folder
 3. To test that it works: `DBTYPE=inmemory npm start`
    * it will be available on port 8080
-4. Deploy the app.
+4. Deploy the app thorough your app engine, or run `node app`.
 
 ## Description
 
